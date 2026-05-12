@@ -3,7 +3,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3" style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);">
             <div class="container">
-                <a class="navbar-brand fw-bold fs-4" href="#">João Rampazzo.</a>
+                <a class="navbar-brand fw-bold fs-4" href="#">JP.dev</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>

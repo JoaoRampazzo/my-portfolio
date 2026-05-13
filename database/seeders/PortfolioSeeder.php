@@ -19,6 +19,7 @@ class PortfolioSeeder extends Seeder
         \App\Models\Skill::create(['name' => 'MySQL', 'category' => 'Database', 'level' => 80, 'icon' => 'database']);
         \App\Models\Skill::create(['name' => 'PostgreSQL', 'category' => 'Database', 'level' => 80, 'icon' => 'database']);
         \App\Models\Skill::create(['name' => 'Git', 'category' => 'Tools', 'level' => 85, 'icon' => 'git']);
+        \App\Models\Skill::create(['name' => 'IA', 'category' => 'Tools', 'level' => 85, 'icon' => 'cpu']);
 
         // Experiences
         \App\Models\Experience::create([

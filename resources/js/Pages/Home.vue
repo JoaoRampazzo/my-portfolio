@@ -52,7 +52,7 @@
                     <div class="col-lg-8 text-center mb-5">
                         <h2 class="display-4 mb-4">Minha História</h2>
                         <p class="lead text-secondary">
-                            Com sólida experiência no ecossistema PHP e frameworks modernos, busco transformar desafios complexos em sistemas simplificados. Minha trajetória inclui desde projetos para o setor e-commerce (FutFanatics) até vivência internacional.
+                            Com sólida experiência no ecossistema PHP e frameworks modernos, busco transformar desafios complexos em sistemas simplificados. Minha trajetória inclui desde projetos para o setor de e-commerce até vivência internacional.
                         </p>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h4 class="fw-bold mb-0">{{ project.title }}</h4>
                             <span v-if="project.is_private" class="badge bg-warning text-dark rounded-pill" style="font-size: 0.7rem;">
-                                <i class="bi bi-lock-fill"></i> Privado
+                                <i class="bi bi-lock-fill"></i> Projeto Corporativo
                             </span>
                         </div>
                         

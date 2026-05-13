@@ -137,7 +137,7 @@
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content bg-dark border-secondary rounded-4 shadow-lg">
                             <div class="modal-header border-secondary p-4">
-                                <h3 class="modal-title fw-bold" id="exampleModalLabel">{{ selectedProject?.title }}</h3>
+                                <h3 class="modal-title fw-bold text-white" id="exampleModalLabel">{{ selectedProject?.title }}</h3>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body p-4">

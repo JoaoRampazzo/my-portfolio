@@ -1,9 +1,9 @@
 <template>
-    <div class="bg-gradient-hero">
+    <div class="bg-dark-main">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3" style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);">
             <div class="container">
-                <a class="navbar-brand fw-bold fs-4" href="#" @click.prevent="scrollTo('home')">JP.dev</a>
+                <a class="navbar-brand fw-bold fs-4" href="#" @click.prevent="scrollTo('home')"><span class="text-gradient">Jp.Dev</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -14,6 +14,7 @@
                         <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('skills')">Habilidades</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('experience')">Experiência</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('portfolio')">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 fw-bold text-primary" href="#" @click.prevent="scrollTo('contact')">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +61,7 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-5 bg-dark-main">
+        <section id="skills" class="py-5">
             <div class="container py-5">
                 <h2 class="mb-5 text-center">Tecnologias que utilizo</h2>
                 <div class="row g-4">
@@ -78,19 +79,19 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="py-5 bg-dark-main">
             <div class="container py-5">
-                <h2 class="mb-5 text-center">Experiência Profissional</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <div v-for="exp in experiences" :key="exp.id" class="timeline-item">
-                            <h4 class="fw-bold mb-1">{{ exp.role }}</h4>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h6 class="text-primary mb-0">{{ exp.company }}</h6>
-                                <span class="small text-secondary">{{ exp.period }}</span>
-                            </div>
-                            <p class="text-secondary">{{ exp.description }}</p>
+                <h2 class="mb-5 text-center fw-bold text-white">Experiência Profissional</h2>
+                <div class="timeline-wrapper">
+                    <div v-for="(exp, index) in experiences" :key="exp.id" 
+                         class="timeline-item-new" 
+                         :class="index % 2 === 0 ? 'left' : 'right'">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card p-4 timeline-content shadow-lg">
+                            <div class="small text-primary fw-bold mb-2 uppercase">{{ exp.period }}</div>
+                            <h4 class="fw-bold text-white mb-1">{{ exp.role }}</h4>
+                            <h6 class="text-secondary mb-3">{{ exp.company }}</h6>
+                            <p class="text-secondary mb-0 small">{{ exp.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -98,7 +99,7 @@
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="py-5 bg-dark-main">
+        <section id="portfolio" class="py-5">
             <div class="container py-5">
                 <h2 class="mb-5 text-center">Projetos em Destaque</h2>
                 <div class="bento-grid">
@@ -162,11 +163,24 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="py-5 border-top border-secondary opacity-50 mt-5">
-            <div class="container text-center text-secondary">
-                <p>© 2026 João Pedro Rampazzo. Desenvolvido com Laravel + Vue + Bootstrap.</p>
-                <div class="d-flex justify-content-center align-items-center gap-4 mt-3">
+        <!-- Footer / Contact Section -->
+        <footer id="contact" class="py-5 border-top border-secondary mt-5">
+            <div class="container text-center">
+                <div class="mb-5">
+                    <h2 class="display-6 fw-bold text-white mb-3">Vamos conversar?</h2>
+                    <p class="text-secondary mb-4">Estou sempre aberto a novos projetos e parcerias.</p>
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <a href="mailto:joao.live2002@gmail.com" class="btn btn-outline-primary px-5 py-2 rounded-3 fw-bold shadow-sm w-100" style="max-width: 300px;">
+                            <i class="bi bi-envelope-fill me-2"></i> E-mail
+                        </a>
+                        <a href="https://www.linkedin.com/in/jprampazzo197/" target="_blank" class="btn btn-outline-primary px-5 py-2 rounded-3 fw-bold shadow-sm w-100" style="max-width: 300px;">
+                            <i class="bi bi-linkedin me-2"></i> LinkedIn
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center gap-4 mt-5">
                     <!-- GitHub Links Group -->
                     <div class="d-flex gap-3 align-items-center">
                         <a href="https://github.com/JoaoRampazzo-Fut" target="_blank" class="text-secondary social-link d-flex align-items-center gap-2" title="GitHub Profissional">
@@ -176,17 +190,15 @@
                         <span class="text-muted opacity-25">|</span>
                         <a href="https://github.com/JoaoRampazzo" target="_blank" class="text-secondary social-link d-flex align-items-center gap-2" title="GitHub Pessoal">
                             <i class="bi bi-github fs-4"></i>
-                            <span class="small fw-bold opacity-75 d-none d-sm-inline">Pessoal</span>
+                            <span class="small fw-bold opacity-75 d-none d-sm-inline"> Pessoal</span>
                         </a>
                     </div>
-                    
-                    <span class="text-muted opacity-25">|</span>
-
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/jprampazzo197/" target="_blank" class="text-secondary social-link" title="LinkedIn">
-                        <i class="bi bi-linkedin fs-4"></i>
-                    </a>
+                      
                 </div>
+                
+                <p class="mt-5 text-secondary small opacity-50">
+                    © 2026 João Pedro Rampazzo. Desenvolvido com Laravel + Vue + Bootstrap.
+                </p>
             </div>
         </footer>
     </div>
@@ -263,5 +275,83 @@ const scrollTo = (id) => {
 
 .social-link:hover i {
     transform: translateY(-3px);
+}
+
+/* Timeline Custom Styles */
+.timeline-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(99, 102, 241, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item-new {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -8px;
+    background-color: #6366f1;
+    border: 4px solid #1e293b;
+    top: 32px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.timeline-item-new.right {
+    left: 50%;
+}
+
+.timeline-item-new.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item-new.right .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    transition: transform 0.3s ease;
+}
+
+.timeline-item-new:hover .timeline-content {
+    transform: translateY(-5px);
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-wrapper::after {
+        left: 31px;
+    }
+    .timeline-item-new {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        text-align: left !important;
+    }
+    .timeline-item-new.right {
+        left: 0;
+    }
+    .timeline-dot {
+        left: 23px !important;
+    }
 }
 </style>

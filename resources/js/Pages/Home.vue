@@ -3,17 +3,17 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3" style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);">
             <div class="container">
-                <a class="navbar-brand fw-bold fs-4" href="#">JP.dev</a>
+                <a class="navbar-brand fw-bold fs-4" href="#" @click.prevent="scrollTo('home')">JP.dev</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link px-3" href="#home">Início</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#about">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#skills">Habilidades</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#experience">Experiência</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#portfolio">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('home')">Início</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('about')">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('skills')">Habilidades</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('experience')">Experiência</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#" @click.prevent="scrollTo('portfolio')">Projetos</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,8 +30,8 @@
                             Desenvolvedor de Sistemas Fullstack focado em criar soluções eficientes, escaláveis e com alta qualidade técnica.
                         </p>
                         <div class="d-flex gap-3">
-                            <a href="#portfolio" class="btn btn-primary btn-lg px-4 py-3 rounded-4 fw-bold">Ver Projetos</a>
-                            <a href="#about" class="btn btn-outline-light btn-lg px-4 py-3 rounded-4 fw-bold">Sobre Mim</a>
+                            <a href="#" @click.prevent="scrollTo('portfolio')" class="btn btn-primary btn-lg px-4 py-3 rounded-4 fw-bold">Ver Projetos</a>
+                            <a href="#" @click.prevent="scrollTo('about')" class="btn btn-outline-light btn-lg px-4 py-3 rounded-4 fw-bold">Sobre Mim</a>
                         </div>
                     </div>
                     <div class="col-lg-5 d-none d-lg-block">
@@ -62,7 +62,7 @@
         <!-- Skills Section -->
         <section id="skills" class="py-5 bg-dark-darker">
             <div class="container py-5">
-                <h2 class="mb-5 text-center">Tecnologias</h2>
+                <h2 class="mb-5 text-center">Tecnologias que utilizo</h2>
                 <div class="row g-4">
                     <div v-for="(group, category) in skills" :key="category" class="col-md-6 col-lg-3">
                         <div class="glass-card p-4 h-100">
@@ -213,6 +213,14 @@ const openCaseStudy = (project) => {
         modalInstance.show();
     }
 };
+
+const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
 </script>
 
 <style scoped>

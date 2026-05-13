@@ -103,9 +103,14 @@
                 <h2 class="mb-5 text-center">Projetos em Destaque</h2>
                 <div class="bento-grid">
                     <div v-for="project in projects" :key="project.id" class="glass-card project-card p-4 d-flex flex-column">
+                        <!-- Imagem do Projeto -->
+                        <div v-if="project.image" class="mb-4 overflow-hidden rounded-4 shadow-sm" style="height: 180px;">
+                            <img :src="project.image" :alt="project.title" class="w-100 h-100 object-fit-cover shadow-sm">
+                        </div>
+
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h4 class="fw-bold mb-0">{{ project.title }}</h4>
-                            <span v-if="project.is_private" class="badge bg-warning text-dark rounded-pill" style="font-size: 0.7rem;">
+                            <h4 class="fw-bold mb-0 text-white">{{ project.title }}</h4>
+                            <span v-if="project.is_private" class="badge bg-warning text-dark rounded-pill shadow-sm" style="font-size: 0.7rem;">
                                 <i class="bi bi-lock-fill"></i> Projeto Privado
                             </span>
                         </div>

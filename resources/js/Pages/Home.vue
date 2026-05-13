@@ -60,7 +60,7 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-5 bg-dark-darker">
+        <section id="skills" class="py-5 bg-dark-main">
             <div class="container py-5">
                 <h2 class="mb-5 text-center">Tecnologias que utilizo</h2>
                 <div class="row g-4">
@@ -79,7 +79,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-5">
+        <section id="experience" class="py-5 bg-dark-main">
             <div class="container py-5">
                 <h2 class="mb-5 text-center">Experiência Profissional</h2>
                 <div class="row justify-content-center">
@@ -98,7 +98,7 @@
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="py-5">
+        <section id="portfolio" class="py-5 bg-dark-main">
             <div class="container py-5">
                 <h2 class="mb-5 text-center">Projetos em Destaque</h2>
                 <div class="bento-grid">
@@ -239,8 +239,8 @@ const scrollTo = (id) => {
     min-height: 75vh;
 }
 
-.bg-dark-darker {
-    background-color: #0b1120;
+.bg-dark-main {
+    background-color: #0f172a;
 }
 
 .fw-extrabold {

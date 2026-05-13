@@ -106,7 +106,7 @@
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h4 class="fw-bold mb-0">{{ project.title }}</h4>
                             <span v-if="project.is_private" class="badge bg-warning text-dark rounded-pill" style="font-size: 0.7rem;">
-                                <i class="bi bi-lock-fill"></i> Projeto Corporativo
+                                <i class="bi bi-lock-fill"></i> Projeto Privado
                             </span>
                         </div>
                         
